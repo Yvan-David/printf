@@ -5,6 +5,6 @@ int _printf(const char *format, ...)
 {
 	int n;
 
-	n = printf("%s\n", format);
+	n = printf("%s", format);
 	return (n);
 }
