@@ -8,6 +8,8 @@ int _printf(const char *format, ...)
 
 	va_list data;
 	va_start(data, format);
+	if (format == NULL)
+		return (-1);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -22,6 +24,8 @@ int _printf(const char *format, ...)
 					count += _putchar(va_arg(data, int));
 					break;
 				case 's':
+					if ((va_arg(data, char *) == NULL)
+							print_string("NULL")
 					count += print_string(va_arg(data, char *));
 					break;
 				case '%':
