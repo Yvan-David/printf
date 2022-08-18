@@ -1,4 +1,5 @@
 #include <stdarg.h>
+#include <stddef.h>
 #include "main.h"
 
 int _printf(const char *format, ...)
@@ -24,8 +25,8 @@ int _printf(const char *format, ...)
 					count += _putchar(va_arg(data, int));
 					break;
 				case 's':
-					if ((va_arg(data, char *) == NULL)
-							print_string("NULL")
+					if ((va_arg(data, char *)) == NULL)
+							print_string("(null)");
 					count += print_string(va_arg(data, char *));
 					break;
 				case '%':
